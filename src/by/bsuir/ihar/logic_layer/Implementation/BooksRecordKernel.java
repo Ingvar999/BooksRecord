@@ -107,6 +107,7 @@ public class BooksRecordKernel {
         view.attachHandler("add", BooksRecordKernel.class.getDeclaredMethod("addHandler", new Class[]{String[].class}));
         view.attachHandler("list", BooksRecordKernel.class.getDeclaredMethod("listHandler", new Class[]{String[].class}));
         view.attachHandler("find", BooksRecordKernel.class.getDeclaredMethod("findHandler", new Class[]{String[].class}));
+        view.attachHandler("offer", BooksRecordKernel.class.getDeclaredMethod("offerHandler", new Class[]{String[].class}));
         view.start();
     }
 
@@ -181,13 +182,18 @@ public class BooksRecordKernel {
 
     public String addHandler(String[] parts)
             throws IOException,
-            ClassNotFoundException
+            ClassNotFoundException,
+            MessagingException
     {
         if (currentUser != null && isAdmin && parts.length == 3){
             BookStruct book = new BookStruct(parts[1], parts[2]);
             List<BookStruct> books = file.<BookStruct>getAll(booksFile);
             if (!books.contains(book)){
                 file.<BookStruct>append(booksFile, book);
+                ListIterator<UserStruct> users = file.<UserStruct>getAll(usersFile).listIterator();
+                while (users.hasNext()){
+                    Send(admin.email, adminMailPassword, users.next().email, "New book!", book.title + "\n" +book.author);
+                }
             }
         }
         return "";
@@ -211,6 +217,17 @@ public class BooksRecordKernel {
             }
         }
         return  result;
+    }
+
+    public String offerHandler(String[] parts)
+        throws MessagingException
+    {
+        if (!currentUser.equals(admin)) {
+            if (parts.length == 4) {
+                Send(currentUser.email, parts[3], admin.email, "Offer book", parts[1] + "\n" + parts[2]);
+            }
+        }
+        return "";
     }
 
     private static void Send(final String username, final String password, String recipientEmail, String title, String message)

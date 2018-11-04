@@ -11,4 +11,7 @@ public interface IDataTransfer {
     <T> void append(String sourceName, T item)
             throws IOException,
             ClassNotFoundException;
+    <T> void write(String sourceName, List<T> items)
+            throws IOException,
+            ClassNotFoundException;
 }

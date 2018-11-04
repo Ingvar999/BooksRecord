@@ -28,9 +28,16 @@ public class TextFileReaderWriter implements IDataTransfer {
     {
         List<T> list = getAll(sourceName);
         list.add(item);
+        write(sourceName, list);
+    }
+
+    @Override
+    public <T> void write(String sourceName, List<T> items)
+            throws IOException
+    {
         FileOutputStream fos = new FileOutputStream(sourceName);
         ObjectOutputStream oos = new ObjectOutputStream(fos);
-        oos.writeObject(list);
+        oos.writeObject(items);
         oos.flush();
         oos.close();
     }
