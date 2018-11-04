@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a59fc0f-6022-4a1e-84c1-8c5abc142d4f" name="Default Changelist" comment="" />
+    <list default="true" id="3a59fc0f-6022-4a1e-84c1-8c5abc142d4f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Books.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Books.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BooksRecord.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BooksRecord.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BooksRecord/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BooksRecord/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BooksRecord/BooksRecord.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BooksRecord/BooksRecord.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BooksRecord/by/bsuir/ihar/logic_layer/Implementation/BookStruct.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BooksRecord/by/bsuir/ihar/logic_layer/Implementation/BookStruct.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BooksRecord/by/bsuir/ihar/logic_layer/Implementation/BooksRecordKernel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BooksRecord/by/bsuir/ihar/logic_layer/Implementation/BooksRecordKernel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BooksRecord/by/bsuir/ihar/logic_layer/Implementation/UserStruct.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BooksRecord/by/bsuir/ihar/logic_layer/Implementation/UserStruct.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/by/bsuir/ihar/logic_layer/Implementation/BooksRecordKernel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/by/bsuir/ihar/logic_layer/Implementation/BooksRecordKernel.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,36 +24,37 @@
     <session id="731266584">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="14" />
           <entry key="project.open.time.3" value="3" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.open.time.5" value="3" />
+          <entry key="project.open.time.6" value="2" />
+          <entry key="project.open.time.7" value="4" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="iml" value="1" />
-          <entry key="java" value="8" />
+          <entry key="java" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="8" />
+          <entry key="JAVA" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="18" />
-          <entry key="java" value="2065" />
+          <entry key="java" value="3820" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2065" />
+          <entry key="JAVA" value="3820" />
           <entry key="PLAIN_TEXT" value="18" />
         </counts>
       </usages-collector>
@@ -51,11 +63,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/by/bsuir/ihar/view_layer/Implementation/ConsoleView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="31" column="64" lean-forward="true" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
+            <state relative-caret-position="620">
+              <caret line="38" column="52" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -66,8 +78,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/by/bsuir/ihar/Runner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="15" column="37" lean-forward="true" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+            <state relative-caret-position="200">
+              <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,11 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/by/bsuir/ihar/logic_layer/Implementation/BooksRecordKernel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="65" column="113" selection-start-line="65" selection-start-column="113" selection-end-line="65" selection-end-column="113" />
+            <state relative-caret-position="349">
+              <caret line="148" column="43" selection-start-line="148" selection-start-column="43" selection-end-line="148" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -90,8 +102,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/by/bsuir/ihar/data_layer/Interface/IDataTransfer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+            <state relative-caret-position="140">
+              <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,8 +114,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/by/bsuir/ihar/data_layer/Implementation/TextFileReaderWriter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="58" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="58" />
+            <state relative-caret-position="620">
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -108,7 +126,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/by/bsuir/ihar/view_layer/Interface/IConsoleInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="160">
               <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -129,6 +147,9 @@
     </option>
     <option name="SCHEME" value="Project" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -136,11 +157,11 @@
         <option value="$PROJECT_DIR$/src/by/bsuir/ihar/view_layer/Implementation/IConsoleInterface.java" />
         <option value="$PROJECT_DIR$/src/by/bsuir/ihar/view_layer/Interface/IConsoleInterface.java" />
         <option value="$PROJECT_DIR$/src/by/bsuir/ihar/view_layer/Implementation/MainView.java" />
+        <option value="$PROJECT_DIR$/src/by/bsuir/ihar/Runner.java" />
+        <option value="$PROJECT_DIR$/src/by/bsuir/ihar/view_layer/Implementation/ConsoleView.java" />
         <option value="$PROJECT_DIR$/src/by/bsuir/ihar/data_layer/Interface/IDataTransfer.java" />
         <option value="$PROJECT_DIR$/src/by/bsuir/ihar/data_layer/Implementation/TextFileReaderWriter.java" />
-        <option value="$PROJECT_DIR$/src/by/bsuir/ihar/Runner.java" />
         <option value="$PROJECT_DIR$/src/by/bsuir/ihar/logic_layer/Implementation/BooksRecordKernel.java" />
-        <option value="$PROJECT_DIR$/src/by/bsuir/ihar/view_layer/Implementation/ConsoleView.java" />
       </list>
     </option>
   </component>
@@ -155,7 +176,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -167,6 +187,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -179,52 +200,6 @@
               <item name="BooksRecord" type="616d4139:PackageViewModuleNode" />
               <item name="by.bsuir.ihar" type="1f31426a:PackageElementNode" />
             </path>
-            <path>
-              <item name="BooksRecord" type="58d84e3e:PackageViewProjectNode" />
-              <item name="BooksRecord" type="616d4139:PackageViewModuleNode" />
-              <item name="by.bsuir.ihar" type="1f31426a:PackageElementNode" />
-              <item name="data_layer" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="BooksRecord" type="58d84e3e:PackageViewProjectNode" />
-              <item name="BooksRecord" type="616d4139:PackageViewModuleNode" />
-              <item name="by.bsuir.ihar" type="1f31426a:PackageElementNode" />
-              <item name="data_layer" type="1f31426a:PackageElementNode" />
-              <item name="Implementation" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="BooksRecord" type="58d84e3e:PackageViewProjectNode" />
-              <item name="BooksRecord" type="616d4139:PackageViewModuleNode" />
-              <item name="by.bsuir.ihar" type="1f31426a:PackageElementNode" />
-              <item name="data_layer" type="1f31426a:PackageElementNode" />
-              <item name="Interface" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="BooksRecord" type="58d84e3e:PackageViewProjectNode" />
-              <item name="BooksRecord" type="616d4139:PackageViewModuleNode" />
-              <item name="by.bsuir.ihar" type="1f31426a:PackageElementNode" />
-              <item name="logic_layer" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="BooksRecord" type="58d84e3e:PackageViewProjectNode" />
-              <item name="BooksRecord" type="616d4139:PackageViewModuleNode" />
-              <item name="by.bsuir.ihar" type="1f31426a:PackageElementNode" />
-              <item name="logic_layer" type="1f31426a:PackageElementNode" />
-              <item name="Implementation" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="BooksRecord" type="58d84e3e:PackageViewProjectNode" />
-              <item name="BooksRecord" type="616d4139:PackageViewModuleNode" />
-              <item name="by.bsuir.ihar" type="1f31426a:PackageElementNode" />
-              <item name="view_layer" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="BooksRecord" type="58d84e3e:PackageViewProjectNode" />
-              <item name="BooksRecord" type="616d4139:PackageViewModuleNode" />
-              <item name="by.bsuir.ihar" type="1f31426a:PackageElementNode" />
-              <item name="view_layer" type="1f31426a:PackageElementNode" />
-              <item name="Implementation" type="1f31426a:PackageElementNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -232,10 +207,12 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541148355422" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541255797130" />
+    <property name="last_opened_file_path" value="C:/Program Files/Java/jdk1.8.0_181/lib/javax.xml.rpc-api.jar!/" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -286,7 +263,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16040269" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17449665" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -295,8 +272,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32907802" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.21843971" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.28652483" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -323,17 +300,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/by/bsuir/ihar/logic_layer/Interface/IConsoleInterface.java" />
     <entry file="file://$PROJECT_DIR$/src/by/bsuir/ihar/view_layer/Implementation/IConsoleInterface.java" />
-    <entry file="file://$PROJECT_DIR$/src/by/bsuir/ihar/data_layer/Implementation/TextFileReaderWriter.java">
+    <entry file="file://$PROJECT_DIR$/javamail-1.4.5/demo/webapp/src/taglib/demo/ListAttachmentsTEI.java" />
+    <entry file="file://$PROJECT_DIR$/javamail-1.4.5/demo/webapp/src/classes/demo/AttachmentServlet.java" />
+    <entry file="file://$PROJECT_DIR$/src/by/bsuir/ihar/view_layer/Implementation/ConsoleView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="58" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/bsuir/ihar/view_layer/Interface/IConsoleInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+        <state relative-caret-position="620">
+          <caret line="38" column="52" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -342,8 +314,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/by/bsuir/ihar/Runner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="37" lean-forward="true" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+        <state relative-caret-position="200">
+          <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -352,25 +324,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/by/bsuir/ihar/data_layer/Interface/IDataTransfer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/bsuir/ihar/logic_layer/Implementation/BooksRecordKernel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="65" column="113" selection-start-line="65" selection-start-column="113" selection-end-line="65" selection-end-column="113" />
+        <state relative-caret-position="140">
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/bsuir/ihar/view_layer/Implementation/ConsoleView.java">
+    <entry file="file://$PROJECT_DIR$/src/by/bsuir/ihar/data_layer/Implementation/TextFileReaderWriter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="31" column="64" lean-forward="true" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
+        <state relative-caret-position="620">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/bsuir/ihar/view_layer/Interface/IConsoleInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/bsuir/ihar/logic_layer/Implementation/BooksRecordKernel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="148" column="43" selection-start-line="148" selection-start-column="43" selection-end-line="148" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -406,6 +391,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
+          <last-edited>javax.servlet</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

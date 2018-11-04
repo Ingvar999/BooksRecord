@@ -29,7 +29,7 @@ public class ConsoleView implements IConsoleInterface {
         Scanner input = new Scanner(System.in);
         while(true){
             if (handlers.containsKey("invitation")){
-                handlers.get("invitation").invoke(kernel, new Object[]{null});
+                System.out.print(handlers.get("invitation").invoke(kernel, new Object[]{null}));
             }
             else
                 System.out.print('>');
@@ -37,7 +37,7 @@ public class ConsoleView implements IConsoleInterface {
             String[] parts = input.nextLine().split(" ");
             if (parts.length > 0){
                 if (handlers.containsKey(parts[0])){
-                    handlers.get(parts[0]).invoke(kernel, new Object[]{parts});
+                    System.out.print(handlers.get(parts[0]).invoke(kernel, new Object[]{parts}));
                 }
             }
         }
