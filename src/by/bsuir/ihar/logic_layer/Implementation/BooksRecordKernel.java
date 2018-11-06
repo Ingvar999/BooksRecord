@@ -112,14 +112,14 @@ public class BooksRecordKernel {
     }
 
     public String invitationHandler(String[] parts){
-        String result = "";
+        StringBuilder result = new StringBuilder();
         if (currentUser != null) {
             if (isAdmin)
-                result += "admin ";
-            result += currentUser.email;
+                result.append("admin ");
+            result.append(currentUser.email);
         }
-        result += ">";
-        return result;
+        result.append(">");
+        return result.toString();
     }
 
     public String logoutHandler(String[] parts){
@@ -144,8 +144,7 @@ public class BooksRecordKernel {
 
     public String loginHandler(String[] parts)
             throws IOException,
-            ClassNotFoundException,
-            MessagingException
+            ClassNotFoundException
     {
         if (parts.length == 3){
             UserStruct user = new UserStruct(parts[1], md.digest(parts[2].getBytes()));
@@ -168,7 +167,7 @@ public class BooksRecordKernel {
             throws IOException,
             ClassNotFoundException
     {
-        String result = "";
+        StringBuilder result = new StringBuilder();
         if (currentUser != null){
             List<BookStruct> books = file.<BookStruct>getAll(booksFile);
             int pagesCount = books.size()/booksPerPage + (books.size()/booksPerPage == 0 ? 0 : 1);
@@ -178,14 +177,14 @@ public class BooksRecordKernel {
                 page = (page > pagesCount ? pagesCount : page) - 1;
             }
             ListIterator<BookStruct> iter = books.listIterator(page * booksPerPage);
-            result += "page " + Integer.toString(page + 1) + "/" + Integer.toString(pagesCount) + "\n";
+            result.append("page " + Integer.toString(page + 1) + "/" + Integer.toString(pagesCount) + "\n");
             int i = 0;
             while (iter.hasNext() && i++ < booksPerPage) {
                 BookStruct book = iter.next();
-                result += book.title + "  -  " + book.author + "\n";
+                result.append(book.title + "  -  " + book.author + "\n");
             }
         }
-        return result;
+        return result.toString();
     }
 
     public String addHandler(String[] parts)
@@ -211,7 +210,7 @@ public class BooksRecordKernel {
             throws IOException,
             ClassNotFoundException
     {
-        String result = "";
+        StringBuilder result = new StringBuilder();
         if (currentUser != null && parts.length == 3){
             String title = (parts[1].equals("-") ? null : parts[1]);
             String author = (parts[2].equals("-") ? null : parts[2]);
@@ -219,11 +218,11 @@ public class BooksRecordKernel {
             for (BookStruct book : books){
                 if ((title == null || title.equals(book.title)) &&
                         (author == null || author.equals(book.author))){
-                    result += book.title + "  -  " + book.author + "\n";
+                    result.append(book.title + "  -  " + book.author + "\n");
                 }
             }
         }
-        return  result;
+        return  result.toString();
     }
 
     public String offerHandler(String[] parts)
