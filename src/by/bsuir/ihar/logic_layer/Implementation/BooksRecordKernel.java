@@ -10,7 +10,6 @@ import java.util.Properties;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Session;
-import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.io.IOException;
@@ -81,6 +80,7 @@ public class BooksRecordKernel {
     private final String usersFile = "Users.txt";
     private final String booksFile = "Books.txt";
     private final String adminMailPassword = "potroschitel9976";
+    private final int booksPerPage = 3;
 
     private IConsoleInterface view;
     private IDataTransfer file;
@@ -100,14 +100,14 @@ public class BooksRecordKernel {
         this.file = dataTransfer;
         md = MessageDigest.getInstance("MD5");
         admin = new UserStruct("shymanski999@gmail.com", md.digest("gg".getBytes()));
-        view.attachHandler("invitation", BooksRecordKernel.class.getDeclaredMethod("invitationHandler", new Class[]{String[].class}));
-        view.attachHandler("signup", BooksRecordKernel.class.getDeclaredMethod("signupHandler", new Class[]{String[].class}));
-        view.attachHandler("login", BooksRecordKernel.class.getDeclaredMethod("loginHandler", new Class[]{String[].class}));
-        view.attachHandler("logout", BooksRecordKernel.class.getDeclaredMethod("logoutHandler", new Class[]{String[].class}));
-        view.attachHandler("add", BooksRecordKernel.class.getDeclaredMethod("addHandler", new Class[]{String[].class}));
-        view.attachHandler("list", BooksRecordKernel.class.getDeclaredMethod("listHandler", new Class[]{String[].class}));
-        view.attachHandler("find", BooksRecordKernel.class.getDeclaredMethod("findHandler", new Class[]{String[].class}));
-        view.attachHandler("offer", BooksRecordKernel.class.getDeclaredMethod("offerHandler", new Class[]{String[].class}));
+        view.attachHandler("invitation", BooksRecordKernel.class.getDeclaredMethod("invitationHandler", String[].class));
+        view.attachHandler("signup", BooksRecordKernel.class.getDeclaredMethod("signupHandler", String[].class));
+        view.attachHandler("login", BooksRecordKernel.class.getDeclaredMethod("loginHandler", String[].class));
+        view.attachHandler("logout", BooksRecordKernel.class.getDeclaredMethod("logoutHandler", String[].class));
+        view.attachHandler("add", BooksRecordKernel.class.getDeclaredMethod("addHandler", String[].class));
+        view.attachHandler("list", BooksRecordKernel.class.getDeclaredMethod("listHandler", String[].class));
+        view.attachHandler("find", BooksRecordKernel.class.getDeclaredMethod("findHandler", String[].class));
+        view.attachHandler("offer", BooksRecordKernel.class.getDeclaredMethod("offerHandler", String[].class));
         view.start();
     }
 
@@ -171,8 +171,16 @@ public class BooksRecordKernel {
         String result = "";
         if (currentUser != null){
             List<BookStruct> books = file.<BookStruct>getAll(booksFile);
-            ListIterator<BookStruct> iter = books.listIterator();
-            while (iter.hasNext()){
+            int pagesCount = books.size()/booksPerPage + (books.size()/booksPerPage == 0 ? 0 : 1);
+            int page = 0;
+            if (parts.length == 2){
+                page = Integer.parseInt(parts[1]);
+                page = (page > pagesCount ? pagesCount : page) - 1;
+            }
+            ListIterator<BookStruct> iter = books.listIterator(page * booksPerPage);
+            result += "page " + Integer.toString(page + 1) + "/" + Integer.toString(pagesCount) + "\n";
+            int i = 0;
+            while (iter.hasNext() && i++ < booksPerPage) {
                 BookStruct book = iter.next();
                 result += book.title + "  -  " + book.author + "\n";
             }
@@ -190,9 +198,9 @@ public class BooksRecordKernel {
             List<BookStruct> books = file.<BookStruct>getAll(booksFile);
             if (!books.contains(book)){
                 file.<BookStruct>append(booksFile, book);
-                ListIterator<UserStruct> users = file.<UserStruct>getAll(usersFile).listIterator();
-                while (users.hasNext()){
-                    Send(admin.email, adminMailPassword, users.next().email, "New book!", book.title + "\n" +book.author);
+                List<UserStruct> users = file.<UserStruct>getAll(usersFile);
+                for (UserStruct user : users){
+                    Send(admin.email, adminMailPassword, user.email, "New book!", book.title + "\n" +book.author);
                 }
             }
         }
@@ -207,9 +215,8 @@ public class BooksRecordKernel {
         if (currentUser != null && parts.length == 3){
             String title = (parts[1].equals("-") ? null : parts[1]);
             String author = (parts[2].equals("-") ? null : parts[2]);
-            ListIterator<BookStruct> books = file.<BookStruct>getAll(booksFile).listIterator();
-            while (books.hasNext()){
-                BookStruct book = books.next();
+            List<BookStruct> books = file.<BookStruct>getAll(booksFile);
+            for (BookStruct book : books){
                 if ((title == null || title.equals(book.title)) &&
                         (author == null || author.equals(book.author))){
                     result += book.title + "  -  " + book.author + "\n";
