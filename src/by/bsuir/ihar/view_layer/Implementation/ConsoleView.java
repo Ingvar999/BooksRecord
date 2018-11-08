@@ -9,6 +9,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ * Класс реализующий консольный интерфейс взаимодействия с пользователем.
+ * @author Игорь Шиманский
+ * @version 1.0
+ * @see by.bsuir.ihar.view_layer.Interface.IConsoleInterface
+ */
 public class ConsoleView implements IConsoleInterface {
 
     private  Map<String, Method> handlers;
@@ -21,8 +27,7 @@ public class ConsoleView implements IConsoleInterface {
 
     @Override
     public void start()
-            throws NoSuchMethodException,
-            IllegalAccessException,
+            throws IllegalAccessException,
             IllegalArgumentException,
             InvocationTargetException
     {

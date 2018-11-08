@@ -6,6 +6,12 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Класс реализующий интерфейс обмена данными с хранилищем.
+ * @author Игорь Шиманский
+ * @version 1.0
+ * @see by.bsuir.ihar.data_layer.Interface.IDataTransfer
+ */
 public class TextFileReaderWriter implements IDataTransfer {
     @Override
     public <T> List<T> getAll(String sourceName)

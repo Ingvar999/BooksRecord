@@ -13,69 +13,17 @@ import javax.mail.Session;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.io.IOException;
-import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.ListIterator;
 
-class UserStruct implements Serializable {
-    public String email;
-    public byte[] passwordhash;
-
-    public UserStruct(String email, byte[] passwordhash){
-        this.email = email;
-        this.passwordhash = passwordhash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (!UserStruct.class.isAssignableFrom(obj.getClass())) {
-            return false;
-        }
-        final UserStruct other = (UserStruct) obj;
-        if ((this.email == null) ? (other.email != null) : !this.email.equals(other.email)) {
-            return false;
-        }
-        if (this.passwordhash.equals(other.passwordhash)) {
-            return false;
-        }
-        return true;
-    }
-}
-
-class BookStruct implements Serializable{
-    public String title;
-    public String author;
-
-    public  BookStruct(String title, String author){
-        this.title = title;
-        this.author = author;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (!BookStruct.class.isAssignableFrom(obj.getClass())) {
-            return false;
-        }
-        final BookStruct other = (BookStruct) obj;
-        if ((this.title == null) ? (other.title != null) : !this.title.equals(other.title)) {
-            return false;
-        }
-        if ((this.author == null) ? (other.author != null) : !this.author.equals(other.author)) {
-            return false;
-        }
-        return true;
-    }
-}
-
+/**
+ * Класс реализующий основную логику приложения.
+ * @author Игорь Шиманский
+ * @version 1.0
+ */
 public class BooksRecordKernel {
     private final String usersFile = "Users.txt";
     private final String booksFile = "Books.txt";
@@ -89,17 +37,26 @@ public class BooksRecordKernel {
     private UserStruct currentUser;
     private boolean isAdmin;
 
+    public BooksRecordKernel()
+            throws NoSuchAlgorithmException
+    {
+        md = MessageDigest.getInstance("MD5");
+        admin = new UserStruct("shymanski999@gmail.com", md.digest("gg".getBytes()));
+    }
+
+    /**
+     * Старт работы приложения
+     * @param view  - интерфейс взаимодействия с пользователем
+     * @param dataTransfer - интерфейс взаимодействия с хранилищем данных
+     */
     public void start(IConsoleInterface view, IDataTransfer dataTransfer)
             throws NoSuchMethodException,
             IllegalAccessException,
             IllegalArgumentException,
-            InvocationTargetException,
-            NoSuchAlgorithmException
+            InvocationTargetException
     {
         this.view = view;
         this.file = dataTransfer;
-        md = MessageDigest.getInstance("MD5");
-        admin = new UserStruct("shymanski999@gmail.com", md.digest("gg".getBytes()));
         view.attachHandler("invitation", BooksRecordKernel.class.getDeclaredMethod("invitationHandler", String[].class));
         view.attachHandler("signup", BooksRecordKernel.class.getDeclaredMethod("signupHandler", String[].class));
         view.attachHandler("login", BooksRecordKernel.class.getDeclaredMethod("loginHandler", String[].class));
@@ -242,7 +199,6 @@ public class BooksRecordKernel {
         Security.addProvider(new com.sun.net.ssl.internal.ssl.Provider());
         final String SSL_FACTORY = "javax.net.ssl.SSLSocketFactory";
 
-        // Get a Properties object
         Properties props = System.getProperties();
         props.setProperty("mail.smtps.host", "smtp.gmail.com");
         props.setProperty("mail.smtp.socketFactory.class", SSL_FACTORY);
@@ -254,10 +210,8 @@ public class BooksRecordKernel {
 
         Session session = Session.getInstance(props, null);
 
-        // -- Create a new message --
         final MimeMessage msg = new MimeMessage(session);
 
-        // -- Set the FROM and TO fields --
         msg.setFrom(new InternetAddress(username));
         msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipientEmail, false));
 
